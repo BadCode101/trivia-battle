@@ -1,3 +1,57 @@
+/* Start screen */
+.welcome-screen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 30px;
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%)
+}
+.welcome-screen h1{
+    font-size: 400%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 60px;
+}
+.dropdown{
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+    font-size: large;
+}
+.dropdown select{
+    height: 40px;
+    width: 300px;
+    font-size: medium;
+    border-radius: 8px;
+    padding: 4px;
+    cursor: pointer;
+}
+.dropdown label{
+    font-weight: bold;
+    font-size: x-large;
+    margin: 30px;
+}
+.start-btn{
+    margin-top: 50px;
+    height: 100px;
+    width: 300px;
+    background-color: rgb(197, 221, 205);
+    border-radius: 40px;
+    border: 2px solid black;
+    padding: 12x 20px;
+    box-shadow: 0px 3px 3px gray;
+    font-size: large;
+    cursor: pointer;
+    color: black;
+}
+.start-btn:hover{
+    background-color: lightgreen;
+    box-shadow: 10px 10px 10px 0px black;
+}
+
+/* Scoreboard */
 .scoreboard{
     box-shadow: 5px 0px 5px grey;
     height: 100px;
@@ -9,6 +63,8 @@
     align-items: center;
     font-size: xx-large;
 }
+
+/* Match time */
 .timer{
     box-shadow: 5px 0px 5px grey;
     background-color: cadetblue;
@@ -48,6 +104,12 @@
 .button:hover{
     background-color: lightgreen;
 }
+.button.correct{
+    background-color: rgb(48, 213, 19)!important;
+}
+button.wrong{
+    background-color: rgb(224, 18, 18)!important;
+}
 .question-container{
     background-color: azure;
     display: flex;
@@ -66,6 +128,12 @@
     padding: 40px;
 }
 
+.bottom-bar-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
 .bottom-bar{
     display: flex;
     justify-content: center;
@@ -79,7 +147,6 @@
     width: 500px;
     padding: 30px;
     background-color: rgb(149, 180, 96);
-    margin-left: 230px;
 }
 .bottom-bar-button{
     height: 50px;
@@ -95,4 +162,5 @@
 }
 .bottom-bar-button:hover{
     background-color: lightgray;
+    box-shadow: 10px 10px 10px 0px black;
 }

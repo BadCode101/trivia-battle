@@ -5,6 +5,7 @@ export default function WelcomeScreen({ onStart }) {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedDifficulty, setSelectedDifficulty] = useState("easy");
 
+  //fetch categories and set default
   useEffect(() => {
     fetch("https://opentdb.com/api_category.php")
       .then(res => res.json())
@@ -17,16 +18,17 @@ export default function WelcomeScreen({ onStart }) {
       .catch(err => console.error("Failed to fetch categories", err));
   }, []);
 
-  //Start from welcome with choice selection
+  //select categories
   const handleStart = () => {
     onStart({ category: selectedCategory, difficulty: selectedDifficulty });
   };
 
+  //UI
   return (
     <div className="welcome-screen">
       <h1>Welcome to Trivia Battle!</h1>
 
-      <div className="dropdown-group">
+      <div className="dropdown">
         <label>Category:</label>
         <select
           value={selectedCategory}
@@ -40,7 +42,7 @@ export default function WelcomeScreen({ onStart }) {
         </select>
       </div>
 
-      <div className="dropdown-group">
+      <div className="dropdown">
         <label>Difficulty:</label>
         <select
           value={selectedDifficulty}
@@ -53,7 +55,7 @@ export default function WelcomeScreen({ onStart }) {
       </div>
 
       <button className="start-btn" onClick={handleStart}>
-        Start Game
+        Start Quiz
       </button>
     </div>
   );
